@@ -1,0 +1,22 @@
+<div class='navbar'>
+  <a routerLink="/home" (click)="clearSelectedApp()" class="text-sub-title logo-style clickable">Cornwallia</a>
+  <div class="top-right-container">
+    <div class="name-style logo-style">{{loggedInName}}</div>
+    <i [matMenuTriggerFor]="menu" class="fa fa-chevron-down bars-style clickable"></i>
+  </div>
+</div>
+
+<mat-menu #menu="matMenu">
+  <a [href]="logoutURL" mat-menu-item (click)='removeUserId()'>
+    <i class="fas fa-sign-out-alt"></i>
+    <span class="mleft-10">Logout</span>
+  </a>
+  <!-- <div mat-menu-item>
+    <i class="fa fa-question-circle"></i>
+    <span class="mleft-10">Help</span>
+  </div> -->
+  <a [routerLink]="['/admin']" mat-menu-item *ngIf="isAdmin">
+    <i class="fas fa-toolbox"></i>
+    <span class="mleft-10">Administrator</span>
+  </a>
+</mat-menu>

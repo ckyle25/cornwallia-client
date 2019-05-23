@@ -1,0 +1,15 @@
+@import "../../../../../assets/styles/_colors";
+@import "../../../../../assets/styles/_typography";
+@import "../../../../../assets/styles/_ui-features";
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background-color: $slate-gray-100;
+  animation: fade 1s;
+  -webkit-animation: fade 1s;
+}

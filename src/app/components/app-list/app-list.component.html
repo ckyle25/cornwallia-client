@@ -1,0 +1,20 @@
+<div class="container">
+  <app-card
+    [appName]="'wishes'"
+    [title]="'Wishes'"
+    [caption]="'Family gift giving portal'"
+    *ngIf="wishesFlag === 1">
+  </app-card>
+  <app-card
+    [appName]="'foodTracker'"
+    [title]="'Food Tracker'"
+    [caption]="'Manage Food Storage'"
+    *ngIf="foodFlag === 1">
+  </app-card>
+  <app-card
+    [appName]="'calendar'"
+    [title]="'Family Calendar'"
+    [caption]="'Keep track of family events'"
+    *ngIf="calendarFlag === 1">
+  </app-card>
+</div>

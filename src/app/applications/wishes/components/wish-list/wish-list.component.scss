@@ -1,0 +1,338 @@
+@import "../../../../../assets/styles/_colors";
+@import "../../../../../assets/styles/_typography";
+@import "../../../../../assets/styles/_ui-features";
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  min-width: 600px;
+}
+
+.content-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.left-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.active-wishes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: $white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin-bottom: 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.active-wishes-top-row-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.reserved-wishes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: $white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  width: 100%;
+  border-radius: 5px;
+}
+
+.right-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin-left: 10px;
+}
+
+.title-style {
+  color: $offblack;
+  margin-bottom: 10px;
+}
+
+.adding-buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+}
+
+.add-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $green;
+  border-radius: 5px;
+  width: 200px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.add-button-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $green;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.add-button:hover {
+  background-color: #00753e;
+  transition: 1s;
+}
+
+.add-button-mobile:hover {
+  background-color: #00753e;
+  transition: 1s;
+}
+
+.import-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $blue;
+  border-radius: 5px;
+  width: 200px;
+  padding: 15px;
+  margin: 0px 0px 10px 10px;
+}
+
+.import-button-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $blue;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 0px 0px 0px 10px;
+}
+
+.import-button:hover {
+  background-color: #0079b2;
+  transition: 1s;
+}
+
+.import-button-mobile:hover {
+  background-color: #0079b2;
+  transition: 1s;
+}
+
+.button-text-style {
+  color: $white;
+  font-size: 20px;
+}
+
+.modal-style {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 700px;
+  border-radius: 5px;
+}
+
+.modal-style-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100vw;
+  border-radius: 5px;
+}
+
+.cancel-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $red;
+  border-radius: 5px;
+  width: 150px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.cancel-button:hover {
+  background-color: #c03037;
+  transition: 1s;
+}
+
+.save-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $green;
+  border-radius: 5px;
+  width: 150px;
+  padding: 10px;
+}
+
+.save-button:hover {
+  background-color: #00753e;
+  transition: 1s;
+}
+
+.input-style:valid {
+  width: 100%;
+  color: $blue;
+}
+
+.input-style:invalid {
+  width: 100%;
+  color: $red;
+}
+
+.add-title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.none-style {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  color: $offblack;
+  margin-bottom: 10px;
+}
+
+.title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.bio-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+  padding: 10px;
+  background-color: $white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: 5px;
+}
+
+.bio-container-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  background-color: $white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.bio-top-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px
+}
+
+.bio-edit-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $blue;
+  border-radius: 5px;
+  margin-right: 3px;
+  padding: 10px;
+}
+
+.bio-edit-button:hover {
+  background-color: #0079b2;
+  transition: 1s;
+}
+
+textarea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 450px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.margin-b-10 {
+  margin: 0px 0px 20px 0px;
+}

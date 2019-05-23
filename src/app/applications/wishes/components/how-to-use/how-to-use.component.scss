@@ -1,0 +1,196 @@
+@import "../../../../../assets/styles/_colors";
+@import "../../../../../assets/styles/_typography";
+@import "../../../../../assets/styles/_ui-features";
+
+.header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+}
+
+.header-container-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+}
+
+.black-film {
+  background-color: $black;
+  opacity: 0.6;
+  width: 100%;
+  height: 400px;
+  z-index: 1;
+  position: absolute;
+}
+
+.black-film-mobile {
+  background-color: $black;
+  opacity: 0.6;
+  width: 100%;
+  height: 200px;
+  z-index: 1;
+  position: absolute;
+}
+
+.title-text-style {
+  color: $white;
+  z-index: 2;
+  text-align: center;
+}
+
+.top-splash {
+  width: 100%;
+  height: 400px;
+  background-image: url('../../../../../assets/photos/dandelion2400.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 400px;
+  position: absolute;
+}
+
+.top-splash-mobile {
+  width: 100%;
+  height: 200px;
+  background-image: url('../../../../../assets/photos/dandelion2400.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 200px;
+  position: absolute;
+}
+
+.instructions-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    width: 100%;
+    margin-top: 10px;
+}
+
+.instructions-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.instructions-style {
+    color: $offblack;
+}
+
+.item-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.add-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $green;
+  border-radius: 5px;
+  width: 150px;
+  padding: 10px;
+}
+
+.add-button-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $green;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.edit-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $blue;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.delete-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $red;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.reserve-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $green;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.release-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $yellow-orange;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.button-text-style {
+  color: $white;
+  font-size: 15px;
+}
+
+.margin-b-10 {
+  margin-bottom: 10px;
+}
+
+.margin-b-5 {
+  margin-bottom: 2.5px;
+}
+
+.margin-l-5 {
+  margin-left: 5px;
+}
