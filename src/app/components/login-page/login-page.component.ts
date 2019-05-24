@@ -1,6 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import { AuthService } from 'src/app/services/auth/auth.service';
 
 @HostListener('window:resize', ['$event'])
 @Component({
@@ -19,7 +18,7 @@ export class LoginPageComponent implements OnInit {
   position: number = 0;
   innerWidth: number = window.innerWidth;
 
-  constructor(private auth: AuthService) {
+  constructor() {
 
    }
 

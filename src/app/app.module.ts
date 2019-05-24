@@ -45,7 +45,6 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AuthService } from './services/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -78,7 +77,6 @@ import { AuthService } from './services/auth/auth.service';
     StatusBar,
     SplashScreen,
     AuthGuardService,
-    AuthService,
     LandingComponent,
     SharedActionCreators,
     SharedService,

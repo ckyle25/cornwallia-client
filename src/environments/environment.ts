@@ -5,8 +5,5 @@
 
 export const environment = {
   production: false,
-  serverUrl: 'https://cornwallia.azurewebsites.net',
-  clientID: 'JL58LF6ccu98nTToPa5vUsm0aVObRjef',
-  domain: 'ckylegaming.auth0.com',
-  callbackURL: 'http://localhost:8100/callback'
+  serverUrl: 'http://localhost:3000/',
 };

@@ -2,7 +2,7 @@
   <div class='navbar' style="justify-content: center">
     <div class="navbar-content" *ngIf="innerWidth >= 1000">
       <a routerLink="/login" class="text-sub-title logo-style clickable">Cornwallia</a>
-      <a (click)="auth.login()"  class="text-mini-header logo-style clickable">Login</a>
+      <a [href]="loginURL" class="text-mini-header logo-style clickable">Login</a>
     </div>
     <div class="mobile-nav" *ngIf="innerWidth < 1000">
       <a routerLink="/login" class="text-sub-title logo-style clickable">Cornwallia</a>
@@ -17,7 +17,7 @@
         <div class="header-description logo-style" [ngStyle]="{'font-size': innerWidth >= 1100 ? '20px' : '17px'}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
         <div class="header-button-container">
           <div class="clickable logo-style" [ngClass]="{'started-button': innerWidth >= 1100, 'mobile-started-button': innerWidth < 1100}">Get Started</div>
-          <a (click)="auth.login()" class="clickable logo-style" [ngClass]="{'demo-button': innerWidth >= 1100, 'mobile-demo-button': innerWidth < 1100}">Login</a>
+          <a [href]="loginURL" class="clickable logo-style" [ngClass]="{'demo-button': innerWidth >= 1100, 'mobile-demo-button': innerWidth < 1100}">Login</a>
         </div>
       </div>
       <div class="header-right"  *ngIf="innerWidth >= 1100">
@@ -55,7 +55,7 @@
 </div>
 
 <mat-menu #loginMenu="matMenu">
-  <a (click)="auth.login()" mat-menu-item>
+  <a [href]="loginURL" mat-menu-item>
     <i class="fas fa-sign-in-alt"></i>
     <span class="mleft-10">Login</span>
   </a>

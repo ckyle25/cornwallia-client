@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { AuthService } from './services/auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +12,9 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    public auth: AuthService
+    private statusBar: StatusBar
   ) {
     this.initializeApp();
-    auth.handleAuthentication();
   }
 
   initializeApp() {
@@ -25,8 +22,5 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-    if (this.auth.isAuthenticated()) {
-      this.auth.renewTokens();
-    }
   }
 }
