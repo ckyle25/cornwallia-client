@@ -5,8 +5,8 @@
       <div class="title-style text-paragraph-header logo-style" *ngIf="innerWidth < 1000">{{wish.titledsc}}</div>
       <div class="button-container" *ngIf="innerWidth >= 1000">
         <div class="release-button button-container clickable" *ngIf="currentUser !== wish.userid && wish.reservedflg == 1 && currentUser === wish.reserveduserid" (click)="onReleaseClick(wish.wishid, wish.userid)">
-          <i class="fa fa-times button-text-style"></i>
-          <pre class="button-text-style logo-style"> Release</pre>
+          <i class="fa fa-times button-text-style button-icon-spacing"></i>
+          <div class="button-text-style logo-style"> Release</div>
         </div>
         <div class="text-style text-paragraph logo-style" *ngIf="currentUser !== wish.userid && wish.reservedflg == 1  && currentUser !== wish.reserveduserid">
           This wish is reserved <br>
@@ -14,7 +14,7 @@
         </div>
         <div class="reserve-button button-container clickable" *ngIf="currentUser !== wish.userid && wish.reservedflg !== 1 " (click)="onReserveClick(wish.wishid, wish.userid)">
             <i class="fa fa-tag button-text-style"></i>
-            <pre class="button-text-style logo-style"> Reserve</pre>
+            <div class="button-text-style logo-style"> Reserve</div>
         </div>
         <div class="edit-button button-container clickable" *ngIf="currentUser === wish.userid || currentUser == wish.parent1wishesuserid || currentUser == wish.parent2wishesuserid" (click)="onEditClick(wish.titledsc, wish.costamt, wish.linktxt, wish.descriptiondsc, wish.ratingnbr, wish.wishid, wish.userid)">
             <i class="fas fa-pencil-alt button-text-style"> </i>
@@ -42,7 +42,7 @@
     <div class="title-style logo-style" *ngIf="currentUser === wish.reserveduserid && wish.reservedflg == 1 && currentUser === wish.reserveduserid">Reserved For: {{wish.firstnameval}}</div>
     <div class="middle-content">
       <rating [rating]="wish.ratingnbr" [wishId]="wish.wishid.toString()"></rating>
-      <pre class="text-style text-paragraph logo-style"> | {{ wish.costamt | currency:'USD':'symbol' }} | </pre>
+      <div class="text-style text-paragraph logo-style"> | {{ wish.costamt | currency:'USD':'symbol' }} | </div>
       <a href={{wish.linktxt}} target="_blank" class="link-style text-paragraph logo-style clickable" *ngIf="wish.linktxt !== ''">Link</a>
       <div class="text-style text-paragraph logo-style" *ngIf="wish.linktxt == ''">No Link</div>
     </div>
@@ -60,11 +60,11 @@
     <div class="add-title-container">
       <div class="cancel-button clickable" (click)="cancelDeleteWish()">
         <i class="fa fa-times button-text-style"></i>
-        <pre class="button-text-style logo-style"> Cancel</pre>
+        <div class="button-text-style logo-style"> Cancel</div>
       </div>
       <div class="confirm-button clickable" (click)="confirmDeleteWish()">
           <i class="fa fa-check button-text-style"></i>
-          <pre class="button-text-style logo-style"> Confirm</pre>
+          <div class="button-text-style logo-style"> Confirm</div>
         </div>
     </div>
   </div>
@@ -93,11 +93,11 @@
     <div class="add-title-container">
       <div class="cancel-button clickable" (click)="cancelEditWish()">
         <i class="fa fa-times button-text-style"></i>
-        <pre class="button-text-style logo-style"> Cancel</pre>
+        <div class="button-text-style logo-style"> Cancel</div>
       </div>
       <div class="save-button clickable" (click)="saveEditedWish(title, price, link, description, rating, wishId, wishUserId)">
           <i class="fa fa-check button-text-style"></i>
-          <pre class="button-text-style logo-style"> Save Updates</pre>
+          <div class="button-text-style logo-style"> Save Updates</div>
         </div>
     </div>
   </div>
@@ -112,11 +112,11 @@
       <div class="add-title-container">
         <div class="cancel-button clickable" (click)="cancelContactClick()">
           <i class="fa fa-times button-text-style"></i>
-          <pre class="button-text-style logo-style"> Cancel</pre>
+          <div class="button-text-style logo-style"> Cancel</div>
         </div>
         <div class="save-button clickable" (click)="sendContact()">
             <i class="fas fa-envelope button-text-style"></i>
-            <pre class="button-text-style logo-style"> Send</pre>
+            <div class="button-text-style logo-style"> Send</div>
           </div>
       </div>
     </div>

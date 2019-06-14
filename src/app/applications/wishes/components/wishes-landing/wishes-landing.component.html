@@ -1,7 +1,9 @@
 <div class="content">
   <app-nav-bar></app-nav-bar>
-  <wishes-sub-nav></wishes-sub-nav>
-  <div *ngIf="wishesInitialized !== false">
-    <router-outlet></router-outlet>
-  </div>
+  <ion-content overflow-scroll="true">
+    <wishes-sub-nav></wishes-sub-nav>
+    <div *ngIf="wishesInitialized !== false">
+      <router-outlet></router-outlet>
+    </div>
+  </ion-content>
 </div>

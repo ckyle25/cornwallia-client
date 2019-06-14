@@ -1,6 +1,8 @@
 <div class="content">
   <app-nav-bar></app-nav-bar>
-  <div *ngIf="foodInitialized !== false">
-    <router-outlet></router-outlet>
-  </div>
+  <ion-content overflow-scroll="true">
+    <div *ngIf="foodInitialized !== false">
+      <router-outlet></router-outlet>
+    </div>
+  </ion-content>
 </div>

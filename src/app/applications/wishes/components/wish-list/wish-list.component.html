@@ -9,11 +9,11 @@
           <div class="adding-buttons-container">
             <div class="add-button clickable" (click)="openAddWishDialog()" *ngIf="currentUserID === wishListUserID || parentUserIdsContains !== -1">
               <i class="fa fa-plus button-text-style"></i>
-              <pre class="button-text-style logo-style">  Add A Wish</pre>
+              <div class="button-text-style logo-style">  Add A Wish</div>
             </div>
             <!-- <div class="import-button clickable" (click)="onImportWishesClick()" *ngIf="currentUserID === wishListUserID || parentUserIdsContains !== -1">
               <i class="fa fa-cloud-download-alt button-text-style"></i>
-              <pre class="button-text-style logo-style">  Import Wishes</pre>
+              <div class="button-text-style logo-style">  Import Wishes</div>
             </div> -->
           </div>
           <wish-card [wishCardId]="'myActiveWishes'" [wishes]="myWishes" [currentUser]="currentUserID" *ngIf="myWishesPresent"></wish-card>
@@ -33,11 +33,11 @@
           <div class="adding-buttons-container">
             <div class="add-button clickable" (click)="openAddWishDialog()" *ngIf="currentUserID === wishListUserID || parentUserIdsContains !== -1">
               <i class="fa fa-plus button-text-style"></i>
-              <pre class="button-text-style logo-style">  Add A Wish</pre>
+              <div class="button-text-style logo-style">  Add A Wish</div>
             </div>
             <!-- <div class="import-button clickable" (click)="onImportWishesClick()" *ngIf="currentUserID === wishListUserID || parentUserIdsContains !== -1">
               <i class="fa fa-cloud-download-alt button-text-style"></i>
-              <pre class="button-text-style logo-style">  Import Wishes</pre>
+              <div class="button-text-style logo-style">  Import Wishes</div>
             </div> -->
           </div>
           <wish-card [wishCardId]="'activeWishes'" [wishes]="activeWishes" [currentUser]="currentUserID" *ngIf="activeWishesPresent"></wish-card>
@@ -55,7 +55,7 @@
     </div>
     <div class="right-content">
       <div class="title-container">
-        <pre class="title-style text-page-title logo-style"> </pre>
+        <div class="title-style text-page-title logo-style"> </div>
       </div>
       <div class="bio-container">
         <div class="bio-top-content">
@@ -163,11 +163,11 @@
     <div class="add-title-container">
       <div class="cancel-button clickable" (click)="cancelAddWishDialog()">
         <i class="fa fa-times button-text-style"></i>
-        <pre class="button-text-style logo-style"> Cancel</pre>
+        <div class="button-text-style logo-style"> Cancel</div>
       </div>
       <div class="save-button clickable" (click)="saveAddedWish()">
           <i class="fa fa-check button-text-style"></i>
-          <pre class="button-text-style logo-style"> Save</pre>
+          <div class="button-text-style logo-style"> Save</div>
         </div>
     </div>
   </div>
@@ -182,11 +182,11 @@
         <div class="add-title-container">
           <div class="cancel-button clickable" (click)="cancelBioEdit()">
             <i class="fa fa-times button-text-style"></i>
-            <pre class="button-text-style logo-style"> Cancel</pre>
+            <div class="button-text-style logo-style"> Cancel</div>
           </div>
           <div class="save-button clickable" (click)="saveBioEdit()">
               <i class="fa fa-check button-text-style"></i>
-              <pre class="button-text-style logo-style"> Save</pre>
+              <div class="button-text-style logo-style"> Save</div>
             </div>
         </div>
       </div>
@@ -212,11 +212,11 @@
       <div class="add-title-container">
         <div class="cancel-button clickable" (click)="onImportWishesCancel()">
           <i class="fa fa-times button-text-style"></i>
-          <pre class="button-text-style logo-style"> Cancel</pre>
+          <div class="button-text-style logo-style"> Cancel</div>
         </div>
         <div class="save-button clickable">
           <i class="fas fa-download button-text-style"></i>
-          <pre class="button-text-style logo-style"> Import</pre>
+          <div class="button-text-style logo-style"> Import</div>
         </div>
       </div>
     </div>
