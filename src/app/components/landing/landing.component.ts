@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable, HostListener } from '@angular/core';
+import { Component, OnInit, Injectable, HostListener, ViewEncapsulation } from '@angular/core';
 import { NgRedux, select } from '@angular-redux/store';
 import { IGlobalState as GlobalState } from '../../redux/rootReducer';
 import { SharedActionCreators } from '../../redux/shared/sharedReducer';
@@ -9,7 +9,8 @@ import { SharedActionCreators } from '../../redux/shared/sharedReducer';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.scss']
+  styleUrls: ['./landing.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class LandingComponent implements OnInit {
 
