@@ -37,6 +37,8 @@ export class WishListComponent implements OnInit {
   myWishesPresent: boolean;
   myReservedWishes: any[];
   myReservedWishesPresent: boolean;
+  completedWishes: any[];
+  completedWishesPresent: boolean;
   innerWidth: number = window.innerWidth;
 
   @select('shared') sharedObs;
@@ -71,13 +73,15 @@ export class WishListComponent implements OnInit {
       this.parentUserIdsContains = parentUserIds.indexOf(this.currentUserID);
 
       this.reservedWishes = result.wishes.filter(obj => obj.reservedflg === 1).sort((a, b) => b.ratingnbr - a.ratingnbr);
-      this.activeWishes = result.wishes.filter(obj => obj.reservedflg !== 1).sort((a, b) => b.ratingnbr - a.ratingnbr);
+      this.activeWishes = result.wishes.filter(obj => obj.reservedflg !== 1 && obj.completedflg !== 1).sort((a, b) => b.ratingnbr - a.ratingnbr);
       this.activeWishes.length > 0 ? this.activeWishesPresent = true : this.activeWishesPresent = false;
       this.reservedWishes.length > 0 ? this.reservedWishesPresent = true : this.reservedWishesPresent = false;
-      this.myWishes = result.myWishes.sort((a, b) => b.ratingnbr - a.ratingnbr);
+      this.myWishes = result.myWishes.filter(obj => obj.completedflg !== 1).sort((a, b) => b.ratingnbr - a.ratingnbr);
       this.myWishes.length > 0 ? this.myWishesPresent = true : this.myWishesPresent = false;
       this.myReservedWishes = result.myReservedWishes.sort((a, b) => b.ratingnbr - a.ratingnbr);
       this.myReservedWishes.length > 0 ? this.myReservedWishesPresent = true : this.myReservedWishesPresent = false;
+      this.completedWishes = result.wishes.filter(obj => obj.completedflg === 1).sort((a, b) => b.ratingnbr - a.ratingnbr);
+      this.completedWishes.length > 0 ? this.completedWishesPresent = true : this.completedWishesPresent = false;
     });
   }
 

@@ -52,6 +52,13 @@
             No Reserved Wishes
           </div>
         </div>
+        <div class="active-wishes-container">
+          <div class="title-style text-sub-title logo-style">Completed Wishes</div>
+          <wish-card [wishCardId]="'completedWishes'" [wishes]="completedWishes" [currentUser]="currentUserID" *ngIf="completedWishesPresent"></wish-card>
+          <div *ngIf="!completedWishesPresent" class="none-style text-section-title logo-style">
+            No Completed Wishes
+          </div>
+        </div>
     </div>
     <div class="right-content">
       <div class="title-container">
@@ -136,6 +143,15 @@
         </div>
 
         <div [innerHTML]="wishListUserBio"></div>
+    </div>
+    <div class="active-wishes-container margin-b-10">
+      <div class="active-wishes-top-row-mobile">
+          <div class="title-style text-sub-title logo-style">Completed Wishes</div>
+      </div>
+      <wish-card [wishes]="completedWishes" [currentUser]="currentUserID" *ngIf="completedWishesPresent"></wish-card>
+      <div *ngIf="!completedWishesPresent" class="none-style text-section-title logo-style">
+        No Completed Wishes
+      </div>
     </div>
   </div>
 </div>

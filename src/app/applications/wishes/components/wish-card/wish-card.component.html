@@ -8,6 +8,10 @@
           <i class="fa fa-times button-text-style button-icon-spacing"></i>
           <div class="button-text-style logo-style"> Release</div>
         </div>
+        <div class="release-button button-container clickable" *ngIf="currentUser !== wish.userid && wish.reservedflg == 1 && currentUser === wish.reserveduserid" (click)="onCompleteClick(wish.wishid, wish.userid)">
+          <i class="fa fa-check button-text-style button-icon-spacing"></i>
+          <div class="button-text-style logo-style">Complete</div>
+        </div>
         <div class="text-style text-paragraph logo-style" *ngIf="currentUser !== wish.userid && wish.reservedflg == 1  && currentUser !== wish.reserveduserid">
           This wish is reserved <br>
           <div class="link-style text-paragraph logo-style clickable" (click)="onContactClick(wish.firstnameval, wish.titledsc, wish.reserveduserid)">Email Reserver</div>
@@ -22,6 +26,10 @@
         <div class="delete-button button-container clickable" *ngIf="currentUser === wish.userid || currentUser == wish.parent1wishesuserid || currentUser == wish.parent2wishesuserid" (click)="onDeleteClick(wish.wishid, wish.userid)">
             <i class="fa fa-trash button-text-style"> </i>
         </div>
+        <div class="delete-button button-container clickable" *ngIf="wish.completedflg === 1 && (currentUser === wish.userid || currentUser == wish.parent1wishesuserid || currentUser == wish.parent2wishesuserid)" (click)="onReactivateClick(wish.wishid, wish.userid)">
+          <i class="fa fa-caret-square-up button-text-style"></i>
+          <div class="button-text-style logo-style">Reactivate</div>
+        </div>
       </div>
       <div *ngIf="innerWidth < 1000">
         <div class="text-style text-paragraph logo-style" *ngIf="currentUser !== wish.userid && wish.reservedflg == 1  && currentUser !== wish.reserveduserid" else regularMenu>
@@ -33,8 +41,10 @@
           <mat-menu #wishCardOptions="matMenu">
               <div mat-menu-item class="title-style text-section-title logo-style" *ngIf="currentUser !== wish.userid && wish.reservedflg !== 1 " (click)="onReserveClick(wish.wishid, wish.userid)">Reserve</div>
               <div mat-menu-item class="title-style text-section-title logo-style" *ngIf="currentUser !== wish.userid && wish.reservedflg == 1 && currentUser === wish.reserveduserid" (click)="onReleaseClick(wish.wishid, wish.userid)">Release</div>
+              <div mat-menu-item class="title-style text-section-title logo-style" *ngIf="currentUser !== wish.userid && wish.reservedflg == 1 && currentUser === wish.reserveduserid" (click)="onCompleteClick(wish.wishid, wish.userid)">Complete</div>
               <div mat-menu-item class="title-style text-section-title logo-style" *ngIf="currentUser === wish.userid || currentUser == wish.parent1wishesuserid || currentUser == wish.parent2wishesuserid" (click)="onEditClick(wish.titledsc, wish.costamt, wish.linktxt, wish.descriptiondsc, wish.ratingnbr, wish.wishid, wish.userid)">Edit</div>
               <div mat-menu-item class="title-style text-section-title logo-style" *ngIf="currentUser === wish.userid || currentUser == wish.parent1wishesuserid || currentUser == wish.parent2wishesuserid" (click)="onDeleteClick(wish.wishid, wish.userid)">Delete</div>
+              <div mat-menu-item class="title-style text-section-title logo-style" *ngIf="currentUser === wish.userid || currentUser == wish.parent1wishesuserid || currentUser == wish.parent2wishesuserid" (click)="onReactivateClick(wish.wishid, wish.userid)">Reactivate</div>
           </mat-menu>
         </div>
       </div>
@@ -63,6 +73,24 @@
         <div class="button-text-style logo-style"> Cancel</div>
       </div>
       <div class="confirm-button clickable" (click)="confirmDeleteWish()">
+          <i class="fa fa-check button-text-style"></i>
+          <div class="button-text-style logo-style"> Confirm</div>
+        </div>
+    </div>
+  </div>
+</modal-template>
+
+<modal-template [modalID]="'completeConfirm'">
+  <div [ngClass]="{'delete-modal-style' : innerWidth >= 1000, 'delete-modal-style-mobile' : innerWidth < 1000}">
+    <div class="add-title-container">
+        <div class="title-style text-sub-title logo-style">Complete the Wish?</div>
+    </div>
+    <div class="add-title-container">
+      <div class="cancel-button clickable" (click)="cancelCompleteWish()">
+        <i class="fa fa-times button-text-style"></i>
+        <div class="button-text-style logo-style"> Cancel</div>
+      </div>
+      <div class="confirm-button clickable" (click)="confirmCompleteWish()">
           <i class="fa fa-check button-text-style"></i>
           <div class="button-text-style logo-style"> Confirm</div>
         </div>

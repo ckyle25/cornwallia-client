@@ -48,7 +48,12 @@ const UPDATE_BIO_PENDING = 'UPDATE_BIO_PENDING';
 const UPDATE_BIO_FULFILLED = 'UPDATE_BIO_FULFILLED';
 const RESERVER_WISH_INFO = 'RESERVER_WISH_INFO';
 const REMOVE_RESERVER_WISH_INFO = 'REMOVE_RESERVER_WISH_INFO';
-
+const COMPLETE_WISH = 'COMPLETE_WISH';
+const COMPLETE_WISH_PENDING = 'COMPLETE_WISH_PENDING';
+const COMPLETE_WISH_FULFILLED = 'COMPLETE_WISH_FULFILLED';
+const REACTIVATE_WISH = 'REACTIVATE_WISH';
+const REACTIVATE_WISH_PENDING = 'REACTIVATE_WISH_PENDING';
+const REACTIVATE_WISH_FULFILLED = 'REACTIVATE_WISH_FULFILLED';
 
 
 // Initial State
@@ -61,6 +66,7 @@ export interface IWishesState {
   wishes: any[];
   myReservedWishes: any[];
   myWishes: any[];
+  completedWishes: any[];
   wishListUser: number;
   reserverInfo: any;
 }
@@ -74,6 +80,7 @@ const wishesInitialState: IWishesState = {
   wishes: [],
   myReservedWishes: [],
   myWishes: [],
+  completedWishes: [],
   wishListUser: 0,
   reserverInfo: {}
 };
@@ -175,6 +182,16 @@ export function wishesReducer(state: IWishesState = wishesInitialState, action):
 
     case REMOVE_RESERVER_WISH_INFO:
       return Object.assign({}, state, {reserverInfo: action.payload});
+    
+    case COMPLETE_WISH_PENDING:
+      return Object.assign({}, state, {loading: true});
+    case COMPLETE_WISH_FULFILLED:
+      return Object.assign({}, state, {loading: false});
+
+    case REACTIVATE_WISH_PENDING:
+      return Object.assign({}, state, {loading: true});
+    case REACTIVATE_WISH_FULFILLED:
+      return Object.assign({}, state, {loading: false});
 
     default:
       return state;
@@ -259,6 +276,20 @@ export class WishesActionCreators implements IWishesActionCreators {
     return {
       type: DELETE_WISH,
       payload: this.wishesService.deleteWish(wishId)
+    };
+  }
+
+  completeWish(wishId: number) {
+    return {
+      type: COMPLETE_WISH,
+      payload: this.wishesService.completeWish(wishId)
+    };
+  }
+
+  reactivateWish(wishId: number) {
+    return {
+      type: REACTIVATE_WISH,
+      payload: this.wishesService.reactivateWish(wishId)
     };
   }
 

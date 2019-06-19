@@ -109,6 +109,32 @@ export class WishesService {
             });
   }
 
+  public completeWish(wishId: number): Promise<any> {
+
+    const body = {
+      wishId: wishId,
+     };
+
+    return axios
+            .post(`${this.url}api/wishes/completeWish`, body, this.config)
+            .then(response => {
+              return response.data;
+            });
+  }
+
+  public reactivateWish(wishId: number): Promise<any> {
+
+    const body = {
+      wishId: wishId,
+     };
+
+    return axios
+            .post(`${this.url}api/wishes/reactivateWish`, body, this.config)
+            .then(response => {
+              return response.data;
+            });
+  }
+
   public getReservedWishes(userId: number): Promise<any> {
 
     const body = {

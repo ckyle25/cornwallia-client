@@ -68,10 +68,22 @@ export class WishCardComponent implements OnInit {
     this.modal.openModal('deleteConfirm');
   }
 
+  onCompleteClick(wishid: number, userid: number) {
+    localStorage.setItem('wishId', wishid.toString());
+    localStorage.setItem('wishUserId', userid.toString());
+    this.modal.openModal('completeConfirm');
+  }
+
   cancelDeleteWish() {
     this.wishId = null;
     this.wishUserId = null;
     this.modal.closeModal('deleteConfirm');
+  }
+
+  cancelCompleteWish() {
+    this.wishId = null;
+    this.wishUserId = null;
+    this.modal.closeModal('completeConfirm');
   }
 
   async confirmDeleteWish() {
@@ -85,6 +97,27 @@ export class WishCardComponent implements OnInit {
     }
     localStorage.setItem('wishId', '');
     localStorage.setItem('wishUserId', '');
+  }
+
+  async confirmCompleteWish() {
+    this.modal.closeModal('completeConfirm');
+    const wishid = parseInt(localStorage.getItem('wishId'), 10);
+    const userid = parseInt(localStorage.getItem('wishUserId'), 10);
+    await this.ngRedux.dispatch(this.wishesActionCreators.completeWish(wishid));
+    await this.ngRedux.dispatch(this.wishesActionCreators.getWishes(userid));
+    if (userid === this.currentUser) {
+      await this.ngRedux.dispatch(this.wishesActionCreators.getMyWishes(this.currentUser));
+    }
+    localStorage.setItem('wishId', '');
+    localStorage.setItem('wishUserId', '');
+  }
+
+  async onReactivateClick(wishid: number, userid: number) {
+    await this.ngRedux.dispatch(this.wishesActionCreators.reactivateWish(wishid));
+    await this.ngRedux.dispatch(this.wishesActionCreators.getWishes(userid));
+    if (userid === this.currentUser) {
+      await this.ngRedux.dispatch(this.wishesActionCreators.getMyWishes(this.currentUser));
+    }
   }
 
   onEditClick(title: string, price: number, link: string, description: string, rating: number, wishId: number, userid: number) {
