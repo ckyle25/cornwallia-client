@@ -3,6 +3,10 @@
 @import "../../../assets/styles/_ui-features";
 @font-face { font-family: GOW; src: url('../../../assets/fonts/godofwar.TTF'); }
 
+.all-content {
+  background-color: $background-gray;
+}
+
 .gow-font {
   font-family: GOW;
   color: $offblack;
@@ -92,6 +96,10 @@
   margin-right: 80px;
 }
 
+.header-spacing-mobile {
+  margin-right: 20px;
+}
+
 .header-right {
   @extend %disp-flex;
   flex-direction: column;
@@ -137,6 +145,30 @@
   width: 95%;
   justify-content: space-between;
   align-items: center;
+}
+
+.description-container {
+  @extend %disp-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.dual-content {
+  @extend %disp-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%
+}
+
+.caption-container {
+  @extend %disp-flex;
+  flex-direction: column;
+}
+
+.text-color {
+  color: $offblack;
 }
 
 .app1 {
