@@ -11,9 +11,9 @@
   </div>
   <div [ngClass]="{'header-area' : innerWidth >= 1100, 'mobile-header-area' : innerWidth < 1100}">
     <div [ngClass]="{'header-container' : innerWidth >= 1100, 'mobile-header-container' : innerWidth < 1100}">
-      <div class="gow-font header-spacing">C</div>
+      <div [ngClass]="{'gow-font' : innerWidth >= 1100, 'gow-font-mobile' : innerWidth < 1100 }" class="header-spacing">C</div>
       <div class="header-right">
-        <div class="logo-style title-style">Cornwallia</div>
+        <div [ngClass]="{'title-style' : innerWidth >= 1100, ' title-style-mobile' : innerWidth < 1100 }"  class="logo-style">Cornwallia</div>
         <div class="text-section-title logo-style description-style">A Family App Repository</div>
         <a [href]="loginURL" class="clickable logo-style" [ngClass]="{'demo-button': innerWidth >= 1100, 'mobile-demo-button': innerWidth < 1100}">Login</a>
       </div>
