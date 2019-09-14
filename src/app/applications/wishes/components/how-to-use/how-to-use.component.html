@@ -89,6 +89,32 @@
       </div>
       <div class="item-container margin-b-10">
         <div class="button-title-container">
+          <div class="release-button">
+            <i class="fa fa-check button-text-style"></i>
+            <div class="button-text-style logo-style"> Complete</div>
+          </div>
+          <div class="instructions-style text-section-title logo-style margin-l-5" *ngIf="innerWidth >= 1000">- Completing a Wish</div>
+          <div class="instructions-style text-paragraph-header logo-style margin-l-5" *ngIf="innerWidth < 1000">- Completing a Wish</div>
+        </div>
+        <div class="instructions-style text-paragraph">
+          When you have given your gift to the intended recipient, clicking this button will move the wish to the recipients completed tile and out of your reserved wishes.
+        </div>
+      </div>
+      <div class="item-container margin-b-10">
+        <div class="button-title-container">
+          <div class="delete-button">
+            <i class="fa fa-caret-square-up button-text-style"></i>
+            <div class="button-text-style logo-style"> Reactivate</div>
+          </div>
+          <div class="instructions-style text-section-title logo-style margin-l-5" *ngIf="innerWidth >= 1000">- Reactivating a Wish</div>
+          <div class="instructions-style text-paragraph-header logo-style margin-l-5" *ngIf="innerWidth < 1000">- Reactivating a Wish</div>
+        </div>
+        <div class="instructions-style text-paragraph">
+          If you see a wish in your completed bin that you actually haven't recieved, click this button to move it back to your wishlist.
+        </div>
+      </div>
+      <div class="item-container margin-b-10">
+        <div class="button-title-container">
           <div class="edit-button">
             <i class="fas fa-pencil-alt button-text-style"> </i>
           </div>

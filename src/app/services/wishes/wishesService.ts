@@ -148,6 +148,19 @@ export class WishesService {
             });
   }
 
+  public getMyCompletedWishes(userId: number): Promise<any> {
+
+    const body = {
+      userId
+     };
+
+    return axios
+            .post(`${this.url}api/wishes/getMyCompletedWishes`, body, this.config)
+            .then(response => {
+              return response.data;
+            });
+  }
+
   public updateBio(userId: number, bio: string): Promise<any> {
 
     const body = {

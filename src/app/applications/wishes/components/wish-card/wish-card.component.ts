@@ -104,9 +104,10 @@ export class WishCardComponent implements OnInit {
     const wishid = parseInt(localStorage.getItem('wishId'), 10);
     const userid = parseInt(localStorage.getItem('wishUserId'), 10);
     await this.ngRedux.dispatch(this.wishesActionCreators.completeWish(wishid));
-    await this.ngRedux.dispatch(this.wishesActionCreators.getWishes(userid));
-    if (userid === this.currentUser) {
-      await this.ngRedux.dispatch(this.wishesActionCreators.getMyWishes(this.currentUser));
+    await this.ngRedux.dispatch(this.wishesActionCreators.getMyWishes(this.currentUser));
+    await this.ngRedux.dispatch(this.wishesActionCreators.getReservedWishes(this.currentUser));
+    if (userid !== this.currentUser) {
+      await this.ngRedux.dispatch(this.wishesActionCreators.getWishes(userid));
     }
     localStorage.setItem('wishId', '');
     localStorage.setItem('wishUserId', '');

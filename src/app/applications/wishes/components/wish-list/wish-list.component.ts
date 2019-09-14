@@ -37,6 +37,8 @@ export class WishListComponent implements OnInit {
   myWishesPresent: boolean;
   myReservedWishes: any[];
   myReservedWishesPresent: boolean;
+  myCompletedWishes: any[];
+  myCompletedWishesPresent: boolean;
   completedWishes: any[];
   completedWishesPresent: boolean;
   innerWidth: number = window.innerWidth;
@@ -80,6 +82,8 @@ export class WishListComponent implements OnInit {
       this.myWishes.length > 0 ? this.myWishesPresent = true : this.myWishesPresent = false;
       this.myReservedWishes = result.myReservedWishes.sort((a, b) => b.ratingnbr - a.ratingnbr);
       this.myReservedWishes.length > 0 ? this.myReservedWishesPresent = true : this.myReservedWishesPresent = false;
+      this.myCompletedWishes = result.myCompletedWishes.sort((a, b) => b.ratingnbr - a.ratingnbr);
+      this.myCompletedWishes.length > 0 ? this.myCompletedWishesPresent = true : this.myCompletedWishesPresent = false;
       this.completedWishes = result.wishes.filter(obj => obj.completedflg === 1).sort((a, b) => b.ratingnbr - a.ratingnbr);
       this.completedWishes.length > 0 ? this.completedWishesPresent = true : this.completedWishesPresent = false;
     });

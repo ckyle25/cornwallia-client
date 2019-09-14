@@ -54,6 +54,10 @@ const COMPLETE_WISH_FULFILLED = 'COMPLETE_WISH_FULFILLED';
 const REACTIVATE_WISH = 'REACTIVATE_WISH';
 const REACTIVATE_WISH_PENDING = 'REACTIVATE_WISH_PENDING';
 const REACTIVATE_WISH_FULFILLED = 'REACTIVATE_WISH_FULFILLED';
+const GET_MY_COMPLETED_WISHES = 'GET_MY_COMPLETED_WISHES';
+const GET_MY_COMPLETED_WISHES_PENDING = 'GET_MY_COMPLETED_WISHES_PENDING';
+const GET_MY_COMPLETED_WISHES_FULFILLED = 'GET_MY_COMPLETED_WISHES_FULFILLED';
+
 
 
 // Initial State
@@ -65,6 +69,7 @@ export interface IWishesState {
   wishesInitialized: boolean;
   wishes: any[];
   myReservedWishes: any[];
+  myCompletedWishes: any[];
   myWishes: any[];
   completedWishes: any[];
   wishListUser: number;
@@ -79,6 +84,7 @@ const wishesInitialState: IWishesState = {
   wishesInitialized: false,
   wishes: [],
   myReservedWishes: [],
+  myCompletedWishes: [],
   myWishes: [],
   completedWishes: [],
   wishListUser: 0,
@@ -157,6 +163,11 @@ export function wishesReducer(state: IWishesState = wishesInitialState, action):
     case GET_RESERVED_WISHES_FULFILLED:
       return Object.assign({}, state, {loading: false, myReservedWishes: action.payload});
 
+    case GET_MY_COMPLETED_WISHES_PENDING:
+      return Object.assign({}, state, {loading: true});
+    case GET_MY_COMPLETED_WISHES_FULFILLED:
+      return Object.assign({}, state, {loading: false, myCompletedWishes: action.payload});
+    
     case GET_MY_WISHES_PENDING:
       return Object.assign({}, state, {loading: true});
     case GET_MY_WISHES_FULFILLED:
@@ -318,6 +329,13 @@ export class WishesActionCreators implements IWishesActionCreators {
     return {
       type: GET_MY_WISHES,
       payload: this.wishesService.getWishes(userId)
+    };
+  }
+
+  getMyCompletedWishes(userId: number) {
+    return {
+      type: GET_MY_COMPLETED_WISHES,
+      payload: this.wishesService.getMyCompletedWishes(userId)
     };
   }
 

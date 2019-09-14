@@ -53,6 +53,7 @@ export class WishesLandingComponent implements OnInit {
     await this.ngRedux.dispatch(this.wishesActionCreators.getFamilyReference());
     await this.ngRedux.dispatch(this.wishesActionCreators.getActiveUser(this.edwUserID));
     await this.ngRedux.dispatch(this.wishesActionCreators.getReservedWishes(this.currentUserId));
+    await this.ngRedux.dispatch(this.wishesActionCreators.getMyCompletedWishes(this.currentUserId));
     await this.ngRedux.dispatch(this.wishesActionCreators.getMyWishes(this.currentUserId));
     await this.ngRedux.dispatch(this.wishesActionCreators.getAllUsers());
     await this.ngRedux.dispatch(this.wishesActionCreators.initializeWishes());
