@@ -30,7 +30,7 @@
         </div>
         <div class="active-wishes-container" *ngIf="currentUserID == wishListUserID">
           <div class="title-style text-sub-title logo-style">My Completed Wishes</div>
-          <wish-card [wishCardId]="'myCompletedWishes'" [wishes]="myCompletedWishes" [currentUser]="currentUserID" *ngIf="completedWishesPresent"></wish-card>
+          <wish-card [wishCardId]="'myCompletedWishes'" [wishes]="myCompletedWishes" [currentUser]="currentUserID" *ngIf="myCompletedWishesPresent"></wish-card>
           <div *ngIf="!myCompletedWishesPresent" class="none-style text-section-title logo-style">
             No Completed Wishes
           </div>
@@ -117,6 +117,15 @@
         No Reserved Wishes
       </div>
     </div>
+    <div class="active-wishes-container margin-b-10" *ngIf="currentUserID == wishListUserID">
+      <div class="active-wishes-top-row-mobile">
+        <div class="title-style text-sub-title logo-style">My Completed Wishes</div>
+      </div>
+      <wish-card [wishes]="myCompletedWishes" [currentUser]="currentUserID" *ngIf="myCompletedWishesPresent"></wish-card>
+      <div *ngIf="!myCompletedWishes" class="none-style text-section-title logo-style">
+        No Completed Wishes
+      </div>
+    </div>
     <div class="active-wishes-container margin-b-10" *ngIf="currentUserID !== wishListUserID">
       <div class="active-wishes-top-row-mobile">
         <div class="title-style text-sub-title logo-style">Active Wishes</div>
@@ -140,7 +149,16 @@
       <div *ngIf="!reservedWishesPresent" class="none-style text-section-title logo-style">
         No Reserved Wishes
       </div>
-     </div>
+    </div>
+    <div class="active-wishes-container margin-b-10" *ngIf="currentUserID !== wishListUserID">
+      <div class="active-wishes-top-row-mobile">
+        <div class="title-style text-sub-title logo-style">Completed Wishes</div>
+      </div>
+      <wish-card [wishes]="completedWishes" [currentUser]="currentUserID" *ngIf="completedWishesPresent"></wish-card>
+      <div *ngIf="!completedWishesPresent" class="none-style text-section-title logo-style">
+        No Completed Wishes
+      </div>
+    </div>
      <div class="bio-container-mobile">
         <div class="bio-top-content">
           <div class="title-style text-sub-title logo-style">About me</div>
@@ -150,15 +168,6 @@
         </div>
 
         <div [innerHTML]="wishListUserBio"></div>
-    </div>
-    <div class="active-wishes-container margin-b-10">
-      <div class="active-wishes-top-row-mobile">
-          <div class="title-style text-sub-title logo-style">Completed Wishes</div>
-      </div>
-      <wish-card [wishes]="completedWishes" [currentUser]="currentUserID" *ngIf="completedWishesPresent"></wish-card>
-      <div *ngIf="!completedWishesPresent" class="none-style text-section-title logo-style">
-        No Completed Wishes
-      </div>
     </div>
   </div>
 </div>
