@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverUrl: 'https://cornwallia.azurewebsites.net/',
+  serverUrl: 'https://www.cornwallia.azurewebsites.net/',
 };

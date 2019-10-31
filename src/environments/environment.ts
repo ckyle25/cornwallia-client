@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  serverUrl: 'https://cornwallia.azurewebsites.net/',
+  serverUrl: 'https://www.cornwallia.azurewebsites.net/',
 };
