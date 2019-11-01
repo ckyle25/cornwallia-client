@@ -9,13 +9,13 @@
       <i [matMenuTriggerFor]="loginMenu" class="fa fa-bars bars-style clickable"></i>
     </div>
   </div>
-  <div [ngClass]="{'header-area' : innerWidth >= 1100, 'mobile-header-area' : innerWidth < 1100}">
-    <div [ngClass]="{'header-container' : innerWidth >= 1100, 'mobile-header-container' : innerWidth < 1100}">
-      <div [ngClass]="{'gow-font header-spacing' : innerWidth >= 1100, 'gow-font-mobile header-spacing-mobile' : innerWidth < 1100 }">C</div>
+  <div class="header-area" *ngIf="innerWidth >= 1100">
+    <div class="header-container">
+      <div class="gow-font header-spacing">C</div>
       <div class="header-right">
-        <div [ngClass]="{'title-style' : innerWidth >= 1100, ' title-style-mobile' : innerWidth < 1100 }"  class="logo-style">Cornwallia</div>
+        <div class="title-style logo-style">Cornwallia</div>
         <div class="text-section-title logo-style description-style">A Family App Repository</div>
-        <a [href]="loginURL" class="clickable logo-style" [ngClass]="{'demo-button': innerWidth >= 1100, 'mobile-demo-button': innerWidth < 1100}">Login</a>
+        <a [href]="loginURL" class="clickable logo-style demo-button">Login</a>
       </div>
       <!-- <div class="header-right"  *ngIf="innerWidth >= 1100">
         <div class="top-apps-container">
@@ -50,7 +50,15 @@
     </div>
 
   </div>
-  <div class="description-container">
+  <div class="mobile-header-area" *ngIf="innerWidth < 1100">
+    <div class="mobile-header-container">
+      <div class="gow-font-mobile header-spacing-mobile">C</div>
+      <div class="title-style-mobile logo-style">Cornwallia</div>
+      <div class="text-section-title logo-style description-style">A Family App Repository</div>
+      <a [href]="loginURL" class="clickable logo-style mobile-demo-button">Login</a>
+    </div>
+  </div>
+  <!-- <div class="description-container">
     <div class="dual-content mt50-spacing">
       <mini-app-card
         [appName]="'wishes'"
@@ -62,7 +70,7 @@
         <div class="logo-style text-paragraph  text-color">Family gift giving made easier. <br> A planner's delight.</div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 
 <mat-menu #loginMenu="matMenu">

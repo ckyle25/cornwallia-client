@@ -34,12 +34,11 @@
 .title-style-mobile {
   font-size: 30px;
   color: $offblack;
-  margin-bottom: 10px;
 }
 
 .description-style {
   color: $slate-gray-400;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .navbar-content {
@@ -76,28 +75,22 @@
 
 .mobile-header-area {
   @extend %disp-flex;
-  height: 200px;
   width: 100%;
   background-color: $white;
   align-items: center;
   justify-content: center;
-  padding: 25px;
-  border-bottom: 2px solid $slate-gray-300;
+  padding: 15px;
 }
 
 .mobile-header-container {
   @extend %disp-flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 400px;
 }
 
 .header-spacing {
   margin-right: 80px;
-}
-
-.header-spacing-mobile {
-  margin-right: 20px;
 }
 
 .header-right {
